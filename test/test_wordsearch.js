@@ -1,6 +1,7 @@
 const chai = require('chai');
 const assert = chai.assert;
 const wordSearch = require('../wordsearch.js');
+
 describe("#wordSearch()", function() {
   it("should return false if the word is not present", function() {
     const result = wordSearch([
@@ -16,6 +17,7 @@ describe("#wordSearch()", function() {
     ], 'FRANK');
     assert.isFalse(result);
   });
+
   it("should return true if the word is present", function() {
     const result = wordSearch([
       ['A', 'W', 'C', 'F', 'Q', 'U', 'A', 'L'],
@@ -30,6 +32,7 @@ describe("#wordSearch()", function() {
     ], 'SEINFELD');
     assert.isTrue(result);
   });
+
   it("should return true if the word is vertical", function() {
     const result = wordSearch([
       ['M', 'E', 'U', 'F', 'Q', 'U', 'A', 'L'],
@@ -44,8 +47,10 @@ describe("#wordSearch()", function() {
     ], 'MAY');
     assert.isTrue(result);
   });
+
   it("should return false if array is empty", function() {
     const result = wordSearch([[]], 'MAY');
     assert.isFalse(result);
   });
+  
 });
